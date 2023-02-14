@@ -1,3 +1,14 @@
+const generateRandomQuote = quoteType => {
+  switch (quoteType) {
+    case 'software':
+      return generateRandomSoftwareQuote();
+    case 'motivational':
+      return generateRandomMotivationalQuote();
+    default:
+      return 'Invalid selection.';
+  }
+} 
+
 
 const generateRandomSoftwareQuote = () => {
   const randomSoftwareQuotes = ['Sometimes the idea behind a program is one small creative effort.',
@@ -7,4 +18,12 @@ const generateRandomSoftwareQuote = () => {
   return (randomSoftwareQuotes[Math.floor(Math.random() * randomSoftwareQuotes.length)]);
 }
 
-console.log(generateRandomSoftwareQuote());
+const generateRandomMotivationalQuote = () => {
+  const randomSoftwareQuotes = ['Learn as if you will live forever, live like you will die tomorrow.',
+    'It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest.',
+    'Nature has given us all the pieces required to achieve exceptional wellness and health, but has left it to us to put these pieces together.'
+  ];
+  return (randomSoftwareQuotes[Math.floor(Math.random() * randomSoftwareQuotes.length)]);
+}
+
+console.log(generateRandomQuote('software'));
